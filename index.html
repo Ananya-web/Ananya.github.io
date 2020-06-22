@@ -114,6 +114,28 @@
 		 a:hover{
 		 	background-color: navy;
 		}
+        .ads{
+        	font-size: 40px;
+
+        }
+        #loader{
+			width: 150px;
+			height: 150px;
+			border: solid 16px lightgrey;
+			border-radius: 50%;
+			border-top: solid 16px blue;
+            margin-left: auto;
+            margin-right: auto;
+            animation-name: load;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+		}
+		@keyframes load{
+			0%{transform: rotate(0deg);}
+			100%{transform: rotate(360deg);}
+
+		}
 		body{
 			background-image: url(https://www.londonrelocationconsultancy.com/Yachts/position-calculator21.jpg);
 			background-size: cover;
@@ -125,21 +147,25 @@
 			10%{background-color: lightblue; transform: translate(10px,10px);}
 			}
 	</style>
-	
 <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201507/ca-647-x-404_071615014346.jpg"style="height: 50px; 
 width: 50px;">
 <p style="display: inline; font-size: 30px; font-family: arial; background-color: darkblue; position: relative; animation-name: abc; animation-duration: 5s; animation-iteration-count: infinite; color: white;"><u><b> S. P. PATIL AND ASSOCIATES</u></b></p>
 <br>
 <p style="display: inline; font-size: 15px; font-family: arial;background-color: darkblue; position: relative; animation-name: abc; animation-duration: 5s; animation-iteration-count: infinite; color: white;">CHARTERD ACCOUNTANT</p>
 </head>
-<body>
-	<div class="dropdown">
-		<button class="btn">Dropdown</button>
+
+</body>
+<body onload="load()">
+	<div id="loader"></div>
+	<div style="display: none;" id="webpage">
+	<div>
+	<div style="display: inline;" class="dropdown">
+		<button class="btn">About Us</button>
 		<div class="dropdown-content">
 			<a href="about us.html">About Us</a>
 		</div>
 	</div>
-	<div class="dropdown">
+	<div style="display: inline;" class="dropdown">
 		<button class="btn">Dropdown</button>
 		<div class="dropdown-content">
 			<a href="company formation.html">Company Formation</a>
@@ -151,6 +177,20 @@ width: 50px;">
 			<a href="GST Consulant.html">GST Consulant</a>
 		</div>
 	</div>
-	
+	</div>
+    <a class="ads" href="timesheet.html"><u>Time Sheet</u></a>
+	<a class="ads" href="login.html"><u>Login</u></a>
+	</div>
 </body>
 </html>
+<script type="text/javascript">
+	function load(){
+		setTimeout(showText, 5000);
+	}
+	function showText(){
+		var a = document.getElementById('loader');
+		a.style.display="none";
+		var b = document.getElementById('webpage');
+		b.style.display = "block";
+	}
+</script>
